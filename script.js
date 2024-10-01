@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-</head>
-<body>
-    <script>
-// ---------------------------------------------------        
+       
 let choice,computerChoice,humanChoice;
 let Num=0,humanScore=0, computerScore = 0;
 
@@ -111,8 +103,4 @@ function playGame()
 playGame();
 console.log("Your score:"+ humanScore);
 console.log("Computer score:"+ computerScore);
-
-    </script>
-</body>
-</html>
 
