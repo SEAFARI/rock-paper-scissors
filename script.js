@@ -1,4 +1,5 @@
-       
+
+
 let choice,computerChoice,humanChoice;
 let Num=0,humanScore=0, computerScore = 0;
 
@@ -24,20 +25,22 @@ else if ( Num>=7 && Num<=10)
 }
 
 
-function getHumanChoice()
-{
-    choice = prompt("enter  your choice (rock, paper, scissors)",0);
-    choice = choice.toLowerCase();
-
-}
-
-
 
 function playRound()
 {
     getComputerChoice();
-    getHumanChoice();
-
+   
+    if (humanScore == 5) {
+        let score = document.createElement('p');
+        score.innerHTML = "You win! <br> Final Score - Human: " + humanScore + " Computer: " + computerScore;
+        displayScore.appendChild(score);
+    }
+    
+    if (computerScore == 5) {
+        let score = document.createElement('p');
+        score.innerHTML = "computer wins!<br> Final Score - Human: " + humanScore + " Computer: " + computerScore;
+        displayScore.appendChild(score);
+    }
 
     if (choice===computerChoice)
      {
@@ -92,15 +95,29 @@ function playRound()
 
 }
 
+let rock = document.querySelector('#rock');
+let paper = document.querySelector('#paper');
+let scissors = document.querySelector('#scissors');
+let displayScore = document.querySelector('#displayScore');
 
-function playGame()
-{
-    for(i=1;i<=5;i++)
-        {
-          playRound();
-        }
+rock.onclick = () => {
+    choice = 'rock';
+    playRound();
+    
 }
-playGame();
-console.log("Your score:"+ humanScore);
-console.log("Computer score:"+ computerScore);
+
+paper.onclick =  () => {
+    choice = 'paper';
+    playRound();
+    
+}
+
+scissors.onclick = () => {
+    choice = 'scissors';
+    playRound();
+    
+}
+
+
+
 
